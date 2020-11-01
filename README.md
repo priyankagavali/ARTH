@@ -1,6 +1,7 @@
 # ARTH
 
  TASK DESCRIPTION:
+ 
  The architecture includes- 
 
  Webserver configured on EC2 Instance
