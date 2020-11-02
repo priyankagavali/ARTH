@@ -15,7 +15,7 @@ aws ec2 attach-volume --device /dev/xvdf --instance-id %Iid% --volume-id file://
 
 aws ec2 describe-instances --query Reservations[-1].Instances[].[PublicDnsName] --output text > instanceid1.text
 
-set /p Iid1=<instanceid1.txt
+SET /p Iid1=<instanceid1.txt
 
 ssh -i %savekey% ec2-user@%Iid1% sudo yum install httpd -y
 
