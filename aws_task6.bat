@@ -33,15 +33,15 @@ SET image =images.jpg
 
 aws s3 cp %imagepath% s3.//priyanka022/
 
-set s3="https://priyanka022.s3.ap-south-1.amazonaws.com/%image%"
+SET s3="https://priyanka022.s3.ap-south-1.amazonaws.com/%image%"
 
-set domain_name=priyanka022.s3.ap-south-1.amazonaws.com
+SET domain_name=priyanka022.s3.ap-south-1.amazonaws.com
 
 aws cloudfront create-distribution --origin-domain-name %domain_name% --query Distribution.DomainName --output text > cloudfront.txt
 
 timeout 90
 
-set /p cloudfront=<cloudfront.txt
+SET /p cloudfront=<cloudfront.txt
 
 SET url="<body><center><h1>"Task Successfully Completed....!!</h1><img src=https://%cloudfront%/%image% alt="dont loaded" width = "500" height = "500"></center></body>"
 
